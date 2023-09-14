@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>탁구랭킹</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <!-- 부트스트랩 4.x를 사용한다. -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- 세로 리스트 박스 -->
+        <div class="col-4 column">
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-header">김경현</div>
+            <div class="card-body">
+              <h5 class="card-title">Kevin</h5>
+              <p class="card-text">테이블위의 학살자</p>
+            </div>
+          </div>
+
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-header">하헌규</div>
+            <div class="card-body">
+              <h5 class="card-title">Gyu</h5>
+              <p class="card-text">왼손 빽잡이</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 세로 리스트 박스 -->
+        <div class="col-4 column">
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-success mb-3 no-move">
+            <div class="card-header">손기섭</div>
+            <div class="card-body">
+              <h5 class="card-title">Mj</h5>
+              <p class="card-text">점프 스매셔</p>
+            </div>
+          </div>
+
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-warning mb-3">
+            <div class="card-header">정명교</div>
+            <div class="card-body">
+              <h5 class="card-title">Mk</h5>
+              <p class="card-text">정신력의 달인</p>
+            </div>
+          </div>
+
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-danger mb-3">
+            <div class="card-header">이승찬</div>
+            <div class="card-body">
+              <h5 class="card-title">Mark</h5>
+              <p class="card-text">날으는 디펜더</p>
+            </div>
+          </div>
+
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-info mb-3">
+            <div class="card-header">남철희</div>
+            <div class="card-body">
+              <h5 class="card-title">Reo</h5>
+              <p class="card-text">사교육의 달인</p>
+            </div>
+          </div>
+
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-dark mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Woos</h5>
+              <p class="card-text">흑마법사</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 세로 리스트 박스 -->
+        <div class="col-4 column">
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-header">김효중</div>
+            <div class="card-body">
+              <h5 class="card-title">Albe</h5>
+              <p class="card-text">체육선생님</p>
+            </div>
+          </div>
+
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-header">박귀곤</div>
+            <div class="card-body">
+              <h5 class="card-title">Hippo</h5>
+              <p class="card-text">사교육 스타터</p>
+            </div>
+          </div>
+
+          <!-- 각 카드 리스트 박스 -->
+          <div class="card bg-light mb-3">
+            <div class="card-header">백영호</div>
+            <div class="card-body">
+              <h5 class="card-title">Zero</h5>
+              <p class="card-text">유럽탁구</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- 부트스트랩 4.x를 사용한다. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(function () {
+        $(".column").sortable({
+          // 드래그 앤 드롭 단위 css 선택자
+          connectWith: ".column",
+          // 움직이는 css 선택자
+          handle: ".card-header",
+          // 움직이지 못하는 css 선택자
+          cancel: ".no-move",
+          // 이동하려는 location에 추가 되는 클래스
+          placeholder: "card-placeholder",
+        });
+
+        // 해당 클래스 하위의 텍스트 드래그를 막는다.
+        $(".column .card").disableSelection();
+      });
+    </script>
+  </body>
+</html>
